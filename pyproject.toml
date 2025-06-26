@@ -34,8 +34,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/stainless-sdks/lodestar-python"
-Repository = "https://github.com/stainless-sdks/lodestar-python"
+Homepage = "https://github.com/chasepkelly/lodestar"
+Repository = "https://github.com/chasepkelly/lodestar"
 
 [project.optional-dependencies]
 aiohttp = ["aiohttp", "httpx_aiohttp>=0.1.6"]
@@ -124,7 +124,7 @@ path = "README.md"
 [[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
 # replace relative links with absolute links
 pattern = '\[(.+?)\]\(((?!https?://)\S+?)\)'
-replacement = '[\1](https://github.com/stainless-sdks/lodestar-python/tree/main/\g<2>)'
+replacement = '[\1](https://github.com/chasepkelly/lodestar/tree/main/\g<2>)'
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
