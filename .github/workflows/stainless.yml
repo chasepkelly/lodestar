@@ -1,0 +1,62 @@
+name: Build SDKs for pull request
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  STAINLESS_ORG: YOUR_ORG
+  STAINLESS_PROJECT: YOUR_PROJECT
+  OAS_PATH: YOUR_OAS_PATH
+  COMMIT_MESSAGE: ${{ github.event.pull_request.title }}
+
+jobs:
+  preview:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Run preview builds
+        uses: stainless-api/build-sdk-action/preview@a0ce44cfc7309b1b988f68dc7a74523308c83bf6
+        with:
+          stainless_api_key: ${{ secrets.STAINLESS_API_KEY }}
+          org: ${{ env.STAINLESS_ORG }}
+          project: ${{ env.STAINLESS_PROJECT }}
+          oas_path: ${{ env.OAS_PATH }}
+          commit_message: ${{ env.COMMIT_MESSAGE }}
+
+  merge:
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Run merge build
+        uses: stainless-api/build-sdk-action/merge@a0ce44cfc7309b1b988f68dc7a74523308c83bf6
+        with:
+          stainless_api_key: ${{ secrets.STAINLESS_API_KEY }}
+          org: ${{ env.STAINLESS_ORG }}
+          project: ${{ env.STAINLESS_PROJECT }}
+          oas_path: ${{ env.OAS_PATH }}
+          commit_message: ${{ env.COMMIT_MESSAGE }}
