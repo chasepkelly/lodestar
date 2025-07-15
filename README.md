@@ -1,6 +1,7 @@
 # Lodestar Python API library
 
-[![PyPI version](<https://img.shields.io/pypi/v/lodestar.svg?label=pypi%20(stable)>)](https://pypi.org/project/lodestar/)
+<!-- prettier-ignore -->
+[![PyPI version](https://img.shields.io/pypi/v/lodestar.svg?label=pypi%20(stable))](https://pypi.org/project/lodestar/)
 
 The Lodestar Python library provides convenient access to the Lodestar REST API from any Python 3.8+
 application. The library includes type definitions for all request params and response fields,
@@ -86,7 +87,6 @@ pip install lodestar[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
-import os
 import asyncio
 from lodestar import DefaultAioHttpClient
 from lodestar import AsyncLodestar
@@ -94,7 +94,7 @@ from lodestar import AsyncLodestar
 
 async def main() -> None:
     async with AsyncLodestar(
-        api_key=os.environ.get("PETSTORE_API_KEY"),  # This is the default and can be omitted
+        api_key="My API Key",
         http_client=DefaultAioHttpClient(),
     ) as client:
         order = await client.store.order.create(
