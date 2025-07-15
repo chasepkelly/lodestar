@@ -87,7 +87,6 @@ pip install lodestar[aiohttp]
 Then you can enable it by instantiating the client with `http_client=DefaultAioHttpClient()`:
 
 ```python
-import os
 import asyncio
 from lodestar import DefaultAioHttpClient
 from lodestar import AsyncLodestar
@@ -95,7 +94,7 @@ from lodestar import AsyncLodestar
 
 async def main() -> None:
     async with AsyncLodestar(
-        api_key=os.environ.get("PETSTORE_API_KEY"),  # This is the default and can be omitted
+        api_key="My API Key",
         http_client=DefaultAioHttpClient(),
     ) as client:
         order = await client.store.order.create(
