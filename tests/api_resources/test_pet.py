@@ -335,8 +335,8 @@ class TestPet:
     def test_method_upload_image_with_all_params(self, client: Lodestar) -> None:
         pet = client.pet.upload_image(
             pet_id=0,
-            additional_metadata="additionalMetadata",
             image=b"raw file contents",
+            additional_metadata="additionalMetadata",
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
@@ -685,8 +685,8 @@ class TestAsyncPet:
     async def test_method_upload_image_with_all_params(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.upload_image(
             pet_id=0,
-            additional_metadata="additionalMetadata",
             image=b"raw file contents",
+            additional_metadata="additionalMetadata",
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 

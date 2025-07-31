@@ -27,7 +27,7 @@ Methods:
 - <code title="get /pet/findByStatus">client.pet.<a href="./src/lodestar/resources/pet.py">find_by_status</a>(\*\*<a href="src/lodestar/types/pet_find_by_status_params.py">params</a>) -> <a href="./src/lodestar/types/pet_find_by_status_response.py">PetFindByStatusResponse</a></code>
 - <code title="get /pet/findByTags">client.pet.<a href="./src/lodestar/resources/pet.py">find_by_tags</a>(\*\*<a href="src/lodestar/types/pet_find_by_tags_params.py">params</a>) -> <a href="./src/lodestar/types/pet_find_by_tags_response.py">PetFindByTagsResponse</a></code>
 - <code title="post /pet/{petId}">client.pet.<a href="./src/lodestar/resources/pet.py">update_by_id</a>(pet_id, \*\*<a href="src/lodestar/types/pet_update_by_id_params.py">params</a>) -> None</code>
-- <code title="post /pet/{petId}/uploadImage">client.pet.<a href="./src/lodestar/resources/pet.py">upload_image</a>(pet_id, \*\*<a href="src/lodestar/types/pet_upload_image_params.py">params</a>) -> <a href="./src/lodestar/types/pet_upload_image_response.py">PetUploadImageResponse</a></code>
+- <code title="post /pet/{petId}/uploadImage">client.pet.<a href="./src/lodestar/resources/pet.py">upload_image</a>(pet_id, image, \*\*<a href="src/lodestar/types/pet_upload_image_params.py">params</a>) -> <a href="./src/lodestar/types/pet_upload_image_response.py">PetUploadImageResponse</a></code>
 
 # Store
 
