@@ -22,7 +22,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestPet:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create(self, client: Lodestar) -> None:
         pet = client.pet.create(
@@ -31,7 +31,7 @@ class TestPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_create_with_all_params(self, client: Lodestar) -> None:
         pet = client.pet.create(
@@ -52,7 +52,7 @@ class TestPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: Lodestar) -> None:
         response = client.pet.with_raw_response.create(
@@ -65,7 +65,7 @@ class TestPet:
         pet = response.parse()
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: Lodestar) -> None:
         with client.pet.with_streaming_response.create(
@@ -80,7 +80,7 @@ class TestPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: Lodestar) -> None:
         pet = client.pet.retrieve(
@@ -88,7 +88,7 @@ class TestPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: Lodestar) -> None:
         response = client.pet.with_raw_response.retrieve(
@@ -100,7 +100,7 @@ class TestPet:
         pet = response.parse()
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: Lodestar) -> None:
         with client.pet.with_streaming_response.retrieve(
@@ -114,7 +114,7 @@ class TestPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update(self, client: Lodestar) -> None:
         pet = client.pet.update(
@@ -123,7 +123,7 @@ class TestPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update_with_all_params(self, client: Lodestar) -> None:
         pet = client.pet.update(
@@ -144,7 +144,7 @@ class TestPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: Lodestar) -> None:
         response = client.pet.with_raw_response.update(
@@ -157,7 +157,7 @@ class TestPet:
         pet = response.parse()
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: Lodestar) -> None:
         with client.pet.with_streaming_response.update(
@@ -172,7 +172,7 @@ class TestPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_delete(self, client: Lodestar) -> None:
         pet = client.pet.delete(
@@ -180,7 +180,7 @@ class TestPet:
         )
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: Lodestar) -> None:
         response = client.pet.with_raw_response.delete(
@@ -192,7 +192,7 @@ class TestPet:
         pet = response.parse()
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: Lodestar) -> None:
         with client.pet.with_streaming_response.delete(
@@ -206,13 +206,13 @@ class TestPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_find_by_status(self, client: Lodestar) -> None:
         pet = client.pet.find_by_status()
         assert_matches_type(PetFindByStatusResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_find_by_status_with_all_params(self, client: Lodestar) -> None:
         pet = client.pet.find_by_status(
@@ -220,7 +220,7 @@ class TestPet:
         )
         assert_matches_type(PetFindByStatusResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_find_by_status(self, client: Lodestar) -> None:
         response = client.pet.with_raw_response.find_by_status()
@@ -230,7 +230,7 @@ class TestPet:
         pet = response.parse()
         assert_matches_type(PetFindByStatusResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_find_by_status(self, client: Lodestar) -> None:
         with client.pet.with_streaming_response.find_by_status() as response:
@@ -242,13 +242,13 @@ class TestPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_find_by_tags(self, client: Lodestar) -> None:
         pet = client.pet.find_by_tags()
         assert_matches_type(PetFindByTagsResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_find_by_tags_with_all_params(self, client: Lodestar) -> None:
         pet = client.pet.find_by_tags(
@@ -256,7 +256,7 @@ class TestPet:
         )
         assert_matches_type(PetFindByTagsResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_find_by_tags(self, client: Lodestar) -> None:
         response = client.pet.with_raw_response.find_by_tags()
@@ -266,7 +266,7 @@ class TestPet:
         pet = response.parse()
         assert_matches_type(PetFindByTagsResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_find_by_tags(self, client: Lodestar) -> None:
         with client.pet.with_streaming_response.find_by_tags() as response:
@@ -278,7 +278,7 @@ class TestPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update_by_id(self, client: Lodestar) -> None:
         pet = client.pet.update_by_id(
@@ -286,7 +286,7 @@ class TestPet:
         )
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_update_by_id_with_all_params(self, client: Lodestar) -> None:
         pet = client.pet.update_by_id(
@@ -296,7 +296,7 @@ class TestPet:
         )
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_update_by_id(self, client: Lodestar) -> None:
         response = client.pet.with_raw_response.update_by_id(
@@ -308,7 +308,7 @@ class TestPet:
         pet = response.parse()
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_update_by_id(self, client: Lodestar) -> None:
         with client.pet.with_streaming_response.update_by_id(
@@ -322,7 +322,7 @@ class TestPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_upload_image(self, client: Lodestar) -> None:
         pet = client.pet.upload_image(
@@ -330,7 +330,7 @@ class TestPet:
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_method_upload_image_with_all_params(self, client: Lodestar) -> None:
         pet = client.pet.upload_image(
@@ -340,7 +340,7 @@ class TestPet:
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_raw_response_upload_image(self, client: Lodestar) -> None:
         response = client.pet.with_raw_response.upload_image(
@@ -352,7 +352,7 @@ class TestPet:
         pet = response.parse()
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     def test_streaming_response_upload_image(self, client: Lodestar) -> None:
         with client.pet.with_streaming_response.upload_image(
@@ -372,7 +372,7 @@ class TestAsyncPet:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.create(
@@ -381,7 +381,7 @@ class TestAsyncPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_create_with_all_params(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.create(
@@ -402,7 +402,7 @@ class TestAsyncPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncLodestar) -> None:
         response = await async_client.pet.with_raw_response.create(
@@ -415,7 +415,7 @@ class TestAsyncPet:
         pet = await response.parse()
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncLodestar) -> None:
         async with async_client.pet.with_streaming_response.create(
@@ -430,7 +430,7 @@ class TestAsyncPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.retrieve(
@@ -438,7 +438,7 @@ class TestAsyncPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncLodestar) -> None:
         response = await async_client.pet.with_raw_response.retrieve(
@@ -450,7 +450,7 @@ class TestAsyncPet:
         pet = await response.parse()
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncLodestar) -> None:
         async with async_client.pet.with_streaming_response.retrieve(
@@ -464,7 +464,7 @@ class TestAsyncPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.update(
@@ -473,7 +473,7 @@ class TestAsyncPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update_with_all_params(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.update(
@@ -494,7 +494,7 @@ class TestAsyncPet:
         )
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncLodestar) -> None:
         response = await async_client.pet.with_raw_response.update(
@@ -507,7 +507,7 @@ class TestAsyncPet:
         pet = await response.parse()
         assert_matches_type(Pet, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncLodestar) -> None:
         async with async_client.pet.with_streaming_response.update(
@@ -522,7 +522,7 @@ class TestAsyncPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.delete(
@@ -530,7 +530,7 @@ class TestAsyncPet:
         )
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncLodestar) -> None:
         response = await async_client.pet.with_raw_response.delete(
@@ -542,7 +542,7 @@ class TestAsyncPet:
         pet = await response.parse()
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncLodestar) -> None:
         async with async_client.pet.with_streaming_response.delete(
@@ -556,13 +556,13 @@ class TestAsyncPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_find_by_status(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.find_by_status()
         assert_matches_type(PetFindByStatusResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_find_by_status_with_all_params(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.find_by_status(
@@ -570,7 +570,7 @@ class TestAsyncPet:
         )
         assert_matches_type(PetFindByStatusResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_find_by_status(self, async_client: AsyncLodestar) -> None:
         response = await async_client.pet.with_raw_response.find_by_status()
@@ -580,7 +580,7 @@ class TestAsyncPet:
         pet = await response.parse()
         assert_matches_type(PetFindByStatusResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_find_by_status(self, async_client: AsyncLodestar) -> None:
         async with async_client.pet.with_streaming_response.find_by_status() as response:
@@ -592,13 +592,13 @@ class TestAsyncPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_find_by_tags(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.find_by_tags()
         assert_matches_type(PetFindByTagsResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_find_by_tags_with_all_params(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.find_by_tags(
@@ -606,7 +606,7 @@ class TestAsyncPet:
         )
         assert_matches_type(PetFindByTagsResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_find_by_tags(self, async_client: AsyncLodestar) -> None:
         response = await async_client.pet.with_raw_response.find_by_tags()
@@ -616,7 +616,7 @@ class TestAsyncPet:
         pet = await response.parse()
         assert_matches_type(PetFindByTagsResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_find_by_tags(self, async_client: AsyncLodestar) -> None:
         async with async_client.pet.with_streaming_response.find_by_tags() as response:
@@ -628,7 +628,7 @@ class TestAsyncPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update_by_id(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.update_by_id(
@@ -636,7 +636,7 @@ class TestAsyncPet:
         )
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_update_by_id_with_all_params(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.update_by_id(
@@ -646,7 +646,7 @@ class TestAsyncPet:
         )
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_update_by_id(self, async_client: AsyncLodestar) -> None:
         response = await async_client.pet.with_raw_response.update_by_id(
@@ -658,7 +658,7 @@ class TestAsyncPet:
         pet = await response.parse()
         assert pet is None
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_update_by_id(self, async_client: AsyncLodestar) -> None:
         async with async_client.pet.with_streaming_response.update_by_id(
@@ -672,7 +672,7 @@ class TestAsyncPet:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_upload_image(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.upload_image(
@@ -680,7 +680,7 @@ class TestAsyncPet:
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_method_upload_image_with_all_params(self, async_client: AsyncLodestar) -> None:
         pet = await async_client.pet.upload_image(
@@ -690,7 +690,7 @@ class TestAsyncPet:
         )
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_raw_response_upload_image(self, async_client: AsyncLodestar) -> None:
         response = await async_client.pet.with_raw_response.upload_image(
@@ -702,7 +702,7 @@ class TestAsyncPet:
         pet = await response.parse()
         assert_matches_type(PetUploadImageResponse, pet, path=["response"])
 
-    @pytest.mark.skip()
+    @pytest.mark.skip(reason="Prism tests are disabled")
     @parametrize
     async def test_streaming_response_upload_image(self, async_client: AsyncLodestar) -> None:
         async with async_client.pet.with_streaming_response.upload_image(
